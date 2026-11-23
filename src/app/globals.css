@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+  Brand tokens. Change these on Day 3 (brand direction) and the whole site follows.
+  Colours: background, foreground, accent (+ accent-foreground for text on accent).
+*/
+:root {
+  --background: #faf7f2;
+  --foreground: #1a1714;
+  --accent: #c2410c;
+  --accent-foreground: #ffffff;
+  --muted: #efe9e0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+/*
+  Breakpoints (Tailwind defaults, listed so Figma frames can match):
+  base = mobile (design at 390), sm 640, md 768, lg 1024 (design desktop at 1440), xl 1280, 2xl 1536
+*/
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility prose-width {
+  max-width: 42rem;
+  margin-inline: auto;
+}
